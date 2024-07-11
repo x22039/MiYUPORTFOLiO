@@ -1,0 +1,213 @@
+@charset "utf-8";
+
+* {
+    font-family: 'Yu Gothic', 'Georgia', 'ヒラギノ明朝 ProN', 'Hiragino Mincho ProN';
+}
+
+/* デフォルトのスタイル */
+body {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* タブレット用のスタイル */
+@media (max-width: 768px) {
+    body {
+        width: 95%;
+    }
+}
+
+/* モバイル用のスタイル */
+@media (max-width: 480px) {
+    body {
+        width: 100%;
+    }
+}
+
+/*========= 上部固定させるためのCSS ===============*/
+#header {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000000;
+    text-align: center;
+    padding: 20px;
+    background: #ffffffda;
+    /* 背景色を追加 */
+    /* 影を追加して視認性を向上 */
+}
+
+/* JSを使いfixedクラスが付与された際の設定 */
+#header.fixed {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+}
+
+/*========= レイアウトのためのCSS ===============*/
+
+#header h1 {
+    font-size: 1.2rem;
+    padding-left: 70px;
+}
+
+h2 {
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0 0 30px 0;
+}
+
+p {
+    margin-top: 20px;
+}
+
+small {
+    color: #000000;
+    display: block;
+    text-align: center;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    text-align: center;
+}
+
+nav ul li {
+    padding-inline: 70px;
+    padding-block: 40px;
+    /* ナビゲーション項目間の間隔を調整 */
+}
+
+nav ul li a {
+    display: block;
+    text-decoration: none;
+    color: #666;
+    padding: 10px;
+    transition: all 0.3s;
+}
+
+#g-navi {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 0 0;
+    list-style: none;
+}
+
+/* 左から右に線が伸びる（下部） */
+#g-navi li a {
+    position: relative;
+    display: block;
+    padding: 10px 30px;
+}
+
+#g-navi li.current a,
+#g-navi li a:hover {
+    color: #ffbbe8cb;
+}
+
+
+
+
+#g-navi li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: #ffbbe8cb;
+    transition: all 0.3s;
+    transform: scale(0, 1);
+    transform-origin: left top;
+}
+
+#g-navi li.current a::after,
+#g-navi li a:hover::after {
+    transform: scale(1, 1);
+}
+
+.lead {
+    padding: 50px 20px;
+}
+
+section {
+    padding: 30px;
+}
+
+.first {
+    margin-top: 200px;
+    font-size: 48px;
+}
+
+
+
+/* 最初のセクションにヘッダーの高さ分のマージンを追加 */
+#area-1 {
+    margin-top: 350px;
+    /* ヘッダーの高さ*/
+    position: relative;
+}
+
+#area-1 .about {
+    position: absolute;
+    display: flex;
+    left: 100px;
+    top: -80px;
+}
+
+#area-1 .about p {
+    padding-left: 20px;
+}
+
+#box {
+    position: absolute;
+    border: #ffbbe8cb 1px solid;
+    /*境界線の指定 */
+    padding: 10px;
+    width: 390px;
+    left: 100px;
+}
+
+
+
+#box h1 {
+    text-align: center;
+}
+
+#box p {
+    text-align: left;
+}
+
+img.my {
+    object-fit: cover;
+    width: 300px;
+    height: 500px;
+    position: absolute;
+    right: 40px;
+    top: 10px;
+}
+
+#area-2 {
+    margin-top: 500px;
+    /* ヘッダーの高さ*/
+}
+
+
+#area-3 {
+    box-sizing: border-box;
+    margin-top: 500px;
+    /* ヘッダーの高さ*/
+    height: 100px;
+    margin-bottom: 200px;
+}
+
+#area-3 h1 {
+    font-size: 58px;
+    text-align: center;
+}
